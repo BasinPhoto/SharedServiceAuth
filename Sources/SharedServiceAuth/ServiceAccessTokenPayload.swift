@@ -8,13 +8,13 @@
 import Vapor
 import JWT
 
-struct ServiceAccessTokenPayload: JWTPayload {
-    let serviceId: UUID
-    let serviceName: String
-    let expiration: ExpirationClaim
-    let issuedAt: IssuedAtClaim
-    let audience: AudienceClaim
-    let issuer: IssuerClaim
+public struct ServiceAccessTokenPayload: JWTPayload {
+    public let serviceId: UUID
+    public let serviceName: String
+    public let expiration: ExpirationClaim
+    public let issuedAt: IssuedAtClaim
+    public let audience: AudienceClaim
+    public let issuer: IssuerClaim
 
     init(
         serviceId: UUID,
@@ -32,7 +32,7 @@ struct ServiceAccessTokenPayload: JWTPayload {
         self.issuedAt = IssuedAtClaim(value: issuedAt)
     }
 
-    func verify(using signer: JWTSigner) throws {
+    public func verify(using signer: JWTSigner) throws {
         try self.expiration.verifyNotExpired()
     }
 }
