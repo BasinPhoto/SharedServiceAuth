@@ -16,7 +16,7 @@ public struct ServiceAccessTokenPayload: JWTPayload, Authenticatable {
     public let audience: AudienceClaim
     public let issuer: IssuerClaim
 
-    init(
+    public init(
         serviceId: UUID,
         serviceName: String,
         issuedAt: Date,
