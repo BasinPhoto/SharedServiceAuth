@@ -8,7 +8,7 @@
 import Vapor
 import JWT
 
-public struct ServiceAccessTokenPayload: JWTPayload {
+public struct ServiceAccessTokenPayload: JWTPayload, Authenticatable {
     public let serviceId: UUID
     public let serviceName: String
     public let expiration: ExpirationClaim

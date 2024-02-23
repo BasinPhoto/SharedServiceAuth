@@ -1,7 +1,7 @@
 import XCTest
 @testable import SharedServiceAuth
 
-final class shared_service_authTests: XCTestCase {
+final class SharedServiceAuthTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
