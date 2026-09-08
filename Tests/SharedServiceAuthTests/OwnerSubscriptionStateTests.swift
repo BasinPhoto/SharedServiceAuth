@@ -77,3 +77,18 @@ final class OwnerSubscriptionStateTests: XCTestCase {
         XCTAssertEqual(decoded, state)
     }
 }
+
+final class StudiosyServiceIdentityTests: XCTestCase {
+    /// Pins the value: it is compared across two services, so a change here is
+    /// a wire-compatibility change, not a refactor.
+    func testBackendIdentifierIsStable() {
+        XCTAssertEqual(
+            StudiosyServiceIdentity.backend.uuidString,
+            "DCC91E8E-9841-4CC0-A0DA-4DB4E7C7FEF7"
+        )
+    }
+
+    func testBackendIsRecognized() {
+        XCTAssertTrue(StudiosyServiceIdentity.recognized.contains(StudiosyServiceIdentity.backend))
+    }
+}
